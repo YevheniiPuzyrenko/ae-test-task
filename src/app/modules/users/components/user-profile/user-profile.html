@@ -1,0 +1,29 @@
+<mat-card class="user">
+  <mat-card-title>
+    {{ user.name }}
+  </mat-card-title>
+  <mat-card-subtitle>
+    {{ user.username }}
+  </mat-card-subtitle>
+  <mat-card-content>
+    <div class="occupation">
+      Works at {{ user.company.name }}
+    </div>
+    <address>
+      {{ user.address.city }},
+      {{ user.address.street }},
+      {{ user.address.suite }}
+      <iframe
+        width="450"
+        height="450"
+        frameborder="0" style="border:0"
+        [src]="getIframeUrl()" allowfullscreen></iframe>
+    </address>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button [routerLink]="'/list'">To List</button>
+    <button mat-raised-button [routerLink]="['/edit', user.id]">Edit</button>
+    <a mat-raised-button href="mailto:{{ user.email }}">Email</a>
+    <a mat-raised-button href="http://{{ user.website }}" target="_blank">Website</a>
+  </mat-card-actions>
+</mat-card>

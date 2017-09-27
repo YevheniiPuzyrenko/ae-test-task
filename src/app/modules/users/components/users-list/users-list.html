@@ -1,0 +1,5 @@
+<mat-nav-list>
+   <a class="user"
+      mat-raised-button [routerLink]="['/view', user.id]"
+      *ngFor="let user of users"> {{ user.name }} </a>
+</mat-nav-list>
